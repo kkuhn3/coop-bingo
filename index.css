@@ -1,0 +1,64 @@
+:root {
+  --baseSize: 120px;
+  --selColor: DarkGreen;
+  --selHovColor: ForestGreen;
+}
+
+html {
+	background: #111;
+	color: silver;
+	text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
+	font-family: 'Open Sans', sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+  text-align: center;
+}
+.multi {
+	height:calc(var(--baseSize) * .3);
+	border:1px MidnightBlue solid;
+	color:DodgerBlue;
+}
+td.multi:hover {
+	background: DodgerBlue;
+	color:White;
+}
+td {
+	border:1px grey solid;
+	background:Black;
+	width:calc(var(--baseSize) * 1.6);
+	height:calc(var(--baseSize) * .9);
+	cursor:pointer;
+	font-size: calc(var(--baseSize) * .16);
+	font-weight: 700;
+	text-shadow: 1px 0 0 Black, 0 -1px 0 Black, 0 1px 0 Black, -1px 0 0 Black;
+}
+td.hover {
+	background:#001a36; 
+}
+td:first-child {
+	width:calc(var(--baseSize) * .53);
+}
+td.selected {
+	background:var(--selColor);
+}
+td.selected.hover {
+	background:var(--selHovColor);
+}
+td.intended {
+	-webkit-box-shadow:inset 0px 0px 0px calc(var(--baseSize) * .05); var(--selColor);
+    -moz-box-shadow:inset 0px 0px 0px calc(var(--baseSize) * .05) var(--selColor);
+    box-shadow:inset 0px 0px 0px calc(var(--baseSize) * .05) var(--selColor);
+}
+td.intended.hover {
+	-webkit-box-shadow:inset 0px 0px 0px calc(var(--baseSize) * .05); var(--selHovColor);
+    -moz-box-shadow:inset 0px 0px 0px calc(var(--baseSize) * .05) var(--selHovColor);
+    box-shadow:inset 0px 0px 0px calc(var(--baseSize) * .05) var(--selHovColor);
+}
+.desc {
+	font-size: calc(var(--baseSize) * .12);
+	color:white;
+	font-weight: 400;
+}
+
