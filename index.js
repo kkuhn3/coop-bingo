@@ -33,12 +33,17 @@ function addClassToHovers(className) {
 	let hovers = document.getElementsByClassName("hover");
 	for (let item of hovers) {
 		let itemId = "#".concat(item.id);
-		if($(itemId).hasClass(className)) {
-			$(itemId).removeClass(className);
-		}
-		else {
-			$(itemId).addClass(className);
-		}
+		addClassToItemId(itemId, className);
+		socket.send('{"itemId":"'.concat(itemId).concat('","className":"').concat(className).concat('"}'));
+	}
+}
+
+function addClassToItemId(itemId, className) {
+	if($(itemId).hasClass(className)) {
+		$(itemId).removeClass(className);
+	}
+	else {
+		$(itemId).addClass(className);
 	}
 }
 
@@ -62,6 +67,9 @@ function loadBingo(options, strSeed) {
 		options.splice(randomInd, 1);
 	}
 }
+
+// Create WebSocket connection.
+const socket = new WebSocket('ws://kpow2.com:8080/coop-bingo');
 
 $(document).ready(
 	function() {
@@ -87,6 +95,18 @@ $(document).ready(
 		else if(url.searchParams.get('t') === "mcm") {
 			loadBingo(mcm, url.searchParams.get('s'))
 		}
+
+		// Connection opened
+		socket.addEventListener('open', function (event) {
+			//socket.send('Hello Server!');
+		});
+
+		// Listen for messages
+		socket.addEventListener('message', function (event) {
+			console.log('Message from server ', event.data);
+			msgObj = JSON.parse(event.data);
+			addClassToItemId(msgObj.itemId, msgObj.className);
+		});
 	}
 );
 

@@ -1,7 +1,6 @@
 :root {
   --baseSize: 120px;
   --selColor: DarkGreen;
-  --selHovColor: ForestGreen;
 }
 
 html {
@@ -44,7 +43,7 @@ td.selected {
 	background:var(--selColor);
 }
 td.selected.hover {
-	background:var(--selHovColor);
+	filter: brightness(120%);
 }
 td.intended {
 	-webkit-box-shadow:inset 0px 0px 0px calc(var(--baseSize) * .05); var(--selColor);
@@ -52,9 +51,7 @@ td.intended {
     box-shadow:inset 0px 0px 0px calc(var(--baseSize) * .05) var(--selColor);
 }
 td.intended.hover {
-	-webkit-box-shadow:inset 0px 0px 0px calc(var(--baseSize) * .05); var(--selHovColor);
-    -moz-box-shadow:inset 0px 0px 0px calc(var(--baseSize) * .05) var(--selHovColor);
-    box-shadow:inset 0px 0px 0px calc(var(--baseSize) * .05) var(--selHovColor);
+	filter: brightness(120%);
 }
 .desc {
 	font-size: calc(var(--baseSize) * .12);
