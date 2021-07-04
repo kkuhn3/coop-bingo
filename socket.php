@@ -23,12 +23,12 @@ class Socket implements MessageComponentInterface {
     public function onMessage(ConnectionInterface $from, $msg) {
 		echo "Client $from->resourceId said $msg\n";
         foreach ( $this->clients as $client ) {
-
-            if ( $from->resourceId == $client->resourceId ) {
-                continue;
-            }
-
-            $client->send( "$msg" );
+            if ( $from->resourceId != $client->resourceId && $msg != "ping") {
+				$client->send( "$msg" );
+			}
+			else if( $from->resourceId == $client->resourceId && $msg == "ping" ){
+				$client->send( "pong" );
+			}
         }
     }
 

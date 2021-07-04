@@ -31,16 +31,13 @@ td {
 	cursor:pointer;
 	font-size: calc(var(--baseSize) * .16);
 	font-weight: 700;
-	text-shadow: 1px 0 0 Black, 0 -1px 0 Black, 0 1px 0 Black, -1px 0 0 Black;
+	text-shadow: 2px 0 0 Black, 0 -2px 0 Black, 0 2px 0 Black, -2px 0 0 Black;
 }
 td.hover {
 	background:#001a36; 
 }
 td:first-child {
 	width:calc(var(--baseSize) * .53);
-}
-td.selected {
-	background:var(--selColor);
 }
 td.selected.hover {
 	filter: brightness(120%);
