@@ -35,20 +35,15 @@ td {
 }
 td.hover {
 	background:#001a36; 
+	filter: brightness(120%);
 }
 td:first-child {
 	width:calc(var(--baseSize) * .53);
-}
-td.selected.hover {
-	filter: brightness(120%);
 }
 td.intended {
 	-webkit-box-shadow:inset 0px 0px 0px calc(var(--baseSize) * .05); var(--selColor);
     -moz-box-shadow:inset 0px 0px 0px calc(var(--baseSize) * .05) var(--selColor);
     box-shadow:inset 0px 0px 0px calc(var(--baseSize) * .05) var(--selColor);
-}
-td.intended.hover {
-	filter: brightness(120%);
 }
 .desc {
 	font-size: calc(var(--baseSize) * .12);

@@ -6,6 +6,12 @@ let loIntends = [];
 let loPings = [];
 let bid = null;
 
+let minecraft = "#149a3a";
+let nether = "#ab0809";
+let end = "#bfb00c";
+let adventure = "#6f66a9";
+let husbandry = "#b05e02";
+
 function addHover() {
 	$("#row1").hover(function () { $(".row1").addClass("hover"); }, function () { $(".row1").removeClass("hover"); });
 	$("#row2").hover(function () { $(".row2").addClass("hover"); }, function () { $(".row2").removeClass("hover"); });
@@ -143,7 +149,7 @@ function redraw() {
 			}
 		}
 		else {
-			$('#slot' + i).css('background-color', 'Black');
+			$('#slot' + i).css('background-color', '');
 		}
 	}
 	$.post("boards/save.php",{id:bid, state: JSON.stringify(loColors)});

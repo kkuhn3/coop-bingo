@@ -1,0 +1,1 @@
+php C:\Users\Karl\Documents\coop-bingo\app.php
