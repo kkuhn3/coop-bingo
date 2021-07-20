@@ -1,3 +1,4 @@
 vendor
 composer.lock
 boards/*.json
+maker/user-made/*.json

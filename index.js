@@ -51,7 +51,7 @@ function addColorToHovers(color) {
 	for (let item of hovers) {
 		let itemId = '#'.concat(item.id);
 		addColorToItemId(itemId, color);
-		socket.send('{"itemId":"'.concat(itemId).concat('","className":"selected",').concat('"color":"').concat(color).concat('"}'));
+		socket.send('{"bId":"'.concat(bid).concat('","itemId":"').concat(itemId).concat('","className":"selected",').concat('"color":"').concat(color).concat('"}'));
 	}
 	redraw();
 	start = Date.now();
@@ -63,7 +63,7 @@ function addClassToHovers(className) {
 	for (let item of hovers) {
 		let itemId = '#'.concat(item.id);
 		addClassToItemId(itemId, className);
-		socket.send('{"itemId":"'.concat(itemId).concat('","className":"').concat(className).concat('","color":"').concat(myColor).concat('"}'));
+		socket.send('{"bId":"'.concat(bid).concat('","itemId":"').concat(itemId).concat('","className":"').concat(className).concat('","color":"').concat(myColor).concat('"}'));
 	}
 	start = Date.now();
 	socket.send('ping');
@@ -109,16 +109,18 @@ function loadBingo(options, strSeed) {
 	
 	if(options) {
 		for (let i = 1; i < 26; i++) {
-			let randomInd = Math.floor(random() * options.length);
-			let randomElm = options[randomInd];
-			$('#slot' + i).append(randomElm.name);
-			if(randomElm.description){
-				$('#slot'+i).append("<div class='desc'><br/>" + randomElm.description + "</div>");
+			if(options.length > 0) {
+				let randomInd = Math.floor(random() * options.length);
+				let randomElm = options[randomInd];
+				$('#slot' + i).append(randomElm.name);
+				if(randomElm.description){
+					$('#slot'+i).append("<div class='desc'><br/>" + randomElm.description + "</div>");
+				}
+				if(randomElm.color){
+					$('#slot' + i).css("color", randomElm.color);
+				}
+				options.splice(randomInd, 1);
 			}
-			if(randomElm.color){
-				$('#slot' + i).css("color", randomElm.color);
-			}
-			options.splice(randomInd, 1);
 		}
 	}
 	
@@ -178,15 +180,31 @@ $(document).ready(
 		);
 		if(url.searchParams.get('t') === "mc") {
 			bid = "mc";
-			loadBingo(mc, url.searchParams.get('s'))
+			loadBingo(mc, url.searchParams.get('s'));
 		}
 		else if(url.searchParams.get('t') === "mcm") {
 			bid = "mcm";
-			loadBingo(mcm, url.searchParams.get('s'))
+			loadBingo(mcm, url.searchParams.get('s'));
 		}
 		else {
-			bid = "default";
-			loadBingo(null, "");
+			bid = url.searchParams.get('t');
+			$.post("maker/user-made/get.php",{id:bid},function(data){
+				try{
+					const d = JSON.parse(data);
+					if(d){
+						loadBingo(d, url.searchParams.get('s'));
+					}
+					else {
+						bid = "default";
+						loadBingo(null, "");
+					}
+				}
+				catch(e){
+					console.log(e);
+					bid = "default";
+					loadBingo(null, "");
+				}
+			});
 		}
 
 		// Connection opened
@@ -204,12 +222,14 @@ $(document).ready(
 			}
 			else {
 				msgObj = JSON.parse(event.data);
-				if(msgObj.className === 'selected') {
-					addColorToItemId(msgObj.itemId, msgObj.color);
-					redraw();
-				}
-				else if(msgObj.color === myColor) {
-					addClassToItemId(msgObj.itemId, msgObj.className);
+				if(msgObj.bId === bid) {
+					if(msgObj.className === 'selected') {
+						addColorToItemId(msgObj.itemId, msgObj.color);
+						redraw();
+					}
+					else if(msgObj.color === myColor) {
+						addClassToItemId(msgObj.itemId, msgObj.className);
+					}
 				}
 			}
 		});
