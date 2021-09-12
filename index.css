@@ -11,8 +11,8 @@ html {
 }
 
 table {
-  border-collapse: collapse;
-  text-align: center;
+	border-collapse: collapse;
+	text-align: center;
 }
 .multi {
 	height:calc(var(--baseSize) * .3);
@@ -42,8 +42,8 @@ td:first-child {
 }
 td.intended {
 	-webkit-box-shadow:inset 0px 0px 0px calc(var(--baseSize) * .05); var(--selColor);
-    -moz-box-shadow:inset 0px 0px 0px calc(var(--baseSize) * .05) var(--selColor);
-    box-shadow:inset 0px 0px 0px calc(var(--baseSize) * .05) var(--selColor);
+	-moz-box-shadow:inset 0px 0px 0px calc(var(--baseSize) * .05) var(--selColor);
+	box-shadow:inset 0px 0px 0px calc(var(--baseSize) * .05) var(--selColor);
 }
 .desc {
 	font-size: calc(var(--baseSize) * .12);

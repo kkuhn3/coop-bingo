@@ -5,6 +5,8 @@ let loColors = [];
 let loIntends = [];
 let loPings = [];
 let bid = null;
+const SELECTED = "selected";
+const INTENDED = "intended";
 
 let minecraft = "#149a3a";
 let nether = "#ab0809";
@@ -38,54 +40,52 @@ function addHover() {
 	loIntends.push([]);
 }
 
-function onLeftClick() {
-	addColorToHovers(myColor);
+function onClick(type) {
+	addColorToHovers(myColor, type);
 }
 
-function onRightClick() {
-	addClassToHovers("intended");
-}
-
-function addColorToHovers(color) {
+function addColorToHovers(color, type) {
 	let hovers = document.getElementsByClassName("hover");
 	for (let item of hovers) {
 		let itemId = '#'.concat(item.id);
-		addColorToItemId(itemId, color);
-		socket.send('{"bId":"'.concat(bid).concat('","itemId":"').concat(itemId).concat('","className":"selected",').concat('"color":"').concat(color).concat('"}'));
+		addColorToItemId(itemId, color, type);
+		socket.send('{"bId":"'+bid+'","itemId":"'+itemId+'","className":"'+type+'","color":"'+color+'"}');
 	}
-	redraw();
+	redraw(false);
 	start = Date.now();
 	socket.send('ping');
 }
 
-function addClassToHovers(className) {
-	let hovers = document.getElementsByClassName("hover");
-	for (let item of hovers) {
-		let itemId = '#'.concat(item.id);
-		addClassToItemId(itemId, className);
-		socket.send('{"bId":"'.concat(bid).concat('","itemId":"').concat(itemId).concat('","className":"').concat(className).concat('","color":"').concat(myColor).concat('"}'));
-	}
-	start = Date.now();
-	socket.send('ping');
-}
-
-function addColorToItemId(itemId, color) {
+function addColorToItemId(itemId, color, type) {
 	let ind = parseInt(itemId.substring(5))
-	const hasElem = loColors[ind].indexOf(color);
-	if (hasElem > -1) {
-		loColors[ind].splice(hasElem, 1);
+	if(type === SELECTED) {
+		const hasElem = loColors[ind].indexOf(color);
+		if (hasElem > -1) {
+			loColors[ind].splice(hasElem, 1);
+		}
+		else {
+			loColors[ind].push(color);
+		}
 	}
-	else {
-		loColors[ind].push(color);
+	else if(type === INTENDED) {
+		const hasElem = loIntends[ind].indexOf(color);
+		if(hasElem > -1) {
+			loIntends[ind].splice(hasElem, 1);
+		}
+		else {
+			loIntends[ind].push(color);
+		}
 	}
 }
 
-function addClassToItemId(itemId, className) {
+function addClassToItem(itemId, className) {
+	if(!$(itemId).hasClass(className)) {
+		$(itemId).addClass(className);
+	}
+}
+function removeClassFromItem(itemId, className) {
 	if($(itemId).hasClass(className)) {
 		$(itemId).removeClass(className);
-	}
-	else {
-		$(itemId).addClass(className);
 	}
 }
 
@@ -101,7 +101,17 @@ function loadBingo(options, strSeed) {
 			const d = JSON.parse(data);
 			if(d){
 				loColors = d;
-				redraw();
+				redraw(true);
+			}
+		}
+		catch(e){}
+	});
+	$.post("boards/get.php",{id:bid+'ints'},function(data){
+		try{
+			const d = JSON.parse(data);
+			if(d){
+				loIntends = d;
+				redraw(true);
 			}
 		}
 		catch(e){}
@@ -134,12 +144,13 @@ function updateColor(newColor) {
 	document.documentElement.style.setProperty('--selColor', myColor);
 }
 
-function redraw() {
+function redraw(isLoad) {
 	for (let i = 1; i < 26; i++) {
+		let itemId = '#slot' + i;
 		if(loColors[i].length) {
 			if(loColors[i].length === 1) {
-				$('#slot' + i).css('background-color', loColors[i][0]);
-				$('#slot' + i).css('background-image', 'none');
+				$(itemId).css('background-color', loColors[i][0]);
+				$(itemId).css('background-image', 'none');
 			}
 			else {
 				let gradientStr = 'linear-gradient(to right';
@@ -147,14 +158,23 @@ function redraw() {
 					gradientStr = gradientStr + ', ' + color;
 				}
 				gradientStr = gradientStr + ')';
-				$('#slot' + i).css('background-image', gradientStr);
+				$(itemId).css('background-image', gradientStr);
 			}
 		}
 		else {
-			$('#slot' + i).css('background-color', '');
+			$(itemId).css('background-color', '');
+		}
+		if(loIntends[i].includes(myColor)) {
+			addClassToItem(itemId, INTENDED);
+		}
+		else {
+			removeClassFromItem(itemId, INTENDED);
 		}
 	}
-	$.post("boards/save.php",{id:bid, state: JSON.stringify(loColors)});
+	if(!isLoad) {
+		$.post("boards/save.php",{id:bid, state: JSON.stringify(loColors)});
+		$.post("boards/save.php",{id:bid+"ints", state: JSON.stringify(loIntends)});
+	}
 }
 
 // Create WebSocket connection.
@@ -167,24 +187,30 @@ $(document).ready(
 			window.location = window.location + '&s=' + Math.ceil(999999 * Math.random());
 		}
 		addHover();
-		$("#bingoBoard").click(
-			function() {
-				onLeftClick(); 
-			}
-		);
-		$("#bingoBoard").contextmenu(
-			function() {
-				onRightClick();
-				return false;
-			}
-		);
+		let strSeed = url.searchParams.get('s');
+		if(strSeed.includes('r')) {
+			strSeed = strSeed.replace('r', '');
+		}
+		else {
+			$("#bingoBoard").click(
+				function() {
+					onClick(SELECTED); 
+				}
+			);
+			$("#bingoBoard").contextmenu(
+				function() {
+					onClick(INTENDED);
+					return false;
+				}
+			);
+		}
 		if(url.searchParams.get('t') === "mc") {
 			bid = "mc";
-			loadBingo(mc, url.searchParams.get('s'));
+			loadBingo(mc, strSeed);
 		}
 		else if(url.searchParams.get('t') === "mcm") {
 			bid = "mcm";
-			loadBingo(mcm, url.searchParams.get('s'));
+			loadBingo(mcm, strSeed);
 		}
 		else {
 			bid = url.searchParams.get('t');
@@ -192,7 +218,7 @@ $(document).ready(
 				try{
 					const d = JSON.parse(data);
 					if(d){
-						loadBingo(d, url.searchParams.get('s'));
+						loadBingo(d, strSeed);
 					}
 					else {
 						bid = "default";
@@ -223,12 +249,13 @@ $(document).ready(
 			else {
 				msgObj = JSON.parse(event.data);
 				if(msgObj.bId === bid) {
-					if(msgObj.className === 'selected') {
-						addColorToItemId(msgObj.itemId, msgObj.color);
-						redraw();
+					if(msgObj.className === SELECTED) {
+						addColorToItemId(msgObj.itemId, msgObj.color, SELECTED);
+						redraw(false);
 					}
 					else if(msgObj.color === myColor) {
-						addClassToItemId(msgObj.itemId, msgObj.className);
+						addColorToItemId(msgObj.itemId, msgObj.color, msgObj.className);
+						redraw(false);
 					}
 				}
 			}
