@@ -51,7 +51,7 @@ function addColorToHovers(color, type) {
 		addColorToItemId(itemId, color, type);
 		socket.send('{"bId":"'+bid+'","itemId":"'+itemId+'","className":"'+type+'","color":"'+color+'"}');
 	}
-	redraw(false);
+	redraw(true);
 	start = Date.now();
 	socket.send('ping');
 }
@@ -101,7 +101,7 @@ function loadBingo(options, strSeed) {
 			const d = JSON.parse(data);
 			if(d){
 				loColors = d;
-				redraw(true);
+				redraw(false);
 			}
 		}
 		catch(e){}
@@ -111,7 +111,7 @@ function loadBingo(options, strSeed) {
 			const d = JSON.parse(data);
 			if(d){
 				loIntends = d;
-				redraw(true);
+				redraw(false);
 			}
 		}
 		catch(e){}
@@ -142,9 +142,10 @@ function loadBingo(options, strSeed) {
 function updateColor(newColor) {
 	myColor = newColor;
 	document.documentElement.style.setProperty('--selColor', myColor);
+	redraw(false);
 }
 
-function redraw(isLoad) {
+function redraw(save) {
 	for (let i = 1; i < 26; i++) {
 		let itemId = '#slot' + i;
 		if(loColors[i].length) {
@@ -171,7 +172,7 @@ function redraw(isLoad) {
 			removeClassFromItem(itemId, INTENDED);
 		}
 	}
-	if(!isLoad) {
+	if(save) {
 		$.post("boards/save.php",{id:bid, state: JSON.stringify(loColors)});
 		$.post("boards/save.php",{id:bid+"ints", state: JSON.stringify(loIntends)});
 	}
@@ -190,6 +191,9 @@ $(document).ready(
 		let strSeed = url.searchParams.get('s');
 		if(strSeed.includes('r')) {
 			strSeed = strSeed.replace('r', '');
+			$('#pingDiv').remove();
+			$('#selColorLabel').remove();
+			$('#selColor').remove();
 		}
 		else {
 			$("#bingoBoard").click(
