@@ -179,7 +179,7 @@ function redraw(save) {
 }
 
 // Create WebSocket connection.
-const socket = new WebSocket('ws://kpow2.com:8080/coop-bingo');
+const socket = new WebSocket('ws://kpow2.com:7878/coop-bingo');
 
 $(document).ready(
 	function() {
@@ -189,7 +189,7 @@ $(document).ready(
 		}
 		addHover();
 		let strSeed = url.searchParams.get('s');
-		if(strSeed.includes('r')) {
+		if(strSeed && strSeed.includes('r')) {
 			strSeed = strSeed.replace('r', '');
 			$('#pingDiv').remove();
 			$('#selColorLabel').remove();
@@ -230,7 +230,6 @@ $(document).ready(
 					}
 				}
 				catch(e){
-					console.log(e);
 					bid = "default";
 					loadBingo(null, "");
 				}
