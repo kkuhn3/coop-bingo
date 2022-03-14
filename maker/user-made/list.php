@@ -1,3 +1,3 @@
 <?php
-echo json_encode(scandir("."));
+echo json_encode(preg_grep('~\.(json)$~', scandir(".")));
 ?>

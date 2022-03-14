@@ -1,3 +1,6 @@
 <?php
-file_put_contents(($_POST['id']).".json",$_POST['state']);
+$str = str_replace("\\", "", $_POST['id'], $count);
+$str = str_replace(".", "", $str, $count);
+$str = str_replace("/", "", $str, $count);
+file_put_contents(($str).".json",$_POST['state']);
 ?>

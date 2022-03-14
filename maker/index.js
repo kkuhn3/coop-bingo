@@ -88,15 +88,13 @@ $(document).ready(
 			try {
 				const d = JSON.parse(data);
 				if(d) {
-					for(let i = 0; i < d.length; i++) {
-						if(d[i].includes(".json")) {
-							let selDrop = document.getElementById("sel");
-							let selOption = document.createElement("option");
-							let name = d[i].substring(0, d[i].length-5);
-							selOption.text = name;
-							selOption.value = name;
-							selDrop.add(selOption, 1);
-						}
+					for (const [key, value] of Object.entries(d)) {
+						let selDrop = document.getElementById("sel");
+						let selOption = document.createElement("option");
+						let name = value.substring(0, value.length-5);
+						selOption.text = name;
+						selOption.value = name;
+						selDrop.add(selOption, 1);
 					}
 				}
 			}
