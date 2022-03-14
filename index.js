@@ -14,6 +14,8 @@ let end = "#bfb00c";
 let adventure = "#6f66a9";
 let husbandry = "#b05e02";
 
+let socket = null;
+
 function addHover() {
 	$("#row1").hover(function () { $(".row1").addClass("hover"); }, function () { $(".row1").removeClass("hover"); });
 	$("#row2").hover(function () { $(".row2").addClass("hover"); }, function () { $(".row2").removeClass("hover"); });
@@ -178,9 +180,6 @@ function redraw(save) {
 	}
 }
 
-// Create WebSocket connection.
-const socket = new WebSocket('ws://kpow2.com:7878/coop-bingo');
-
 $(document).ready(
 	function() {
 		parseUrl();
@@ -236,8 +235,11 @@ $(document).ready(
 			});
 		}
 
-		// Connection opened
-		socket.addEventListener('open', function (event) {});
+		socket = new WebSocket("ws://kpow2.com:7979");
+
+		socket.addEventListener('open', function (event) {
+			socket.send('{"subscribe":"coopbingo'+bid+'"}');
+		});
 
 		// Listen for messages
 		socket.addEventListener('message', function (event) {
