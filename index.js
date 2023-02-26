@@ -235,7 +235,7 @@ $(document).ready(
 			});
 		}
 
-		socket = new WebSocket("ws://kpow2.com:7979");
+		socket = new WebSocket(websocketURL);
 
 		socket.addEventListener('open', function (event) {
 			socket.send('{"subscribe":"coopbingo'+bid+'"}');
