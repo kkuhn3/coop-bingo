@@ -215,6 +215,14 @@ $(document).ready(
 			bid = "mcm";
 			loadBingo(mcm, strSeed);
 		}
+		else if(url.searchParams.get('t') === "vht") {
+			bid = "vht";
+			loadBingo(vht, strSeed);
+		}
+		else if(url.searchParams.get('t') === "vhmats") {
+			bid = "vhmats";
+			loadBingo(vhmats, strSeed);
+		}
 		else {
 			bid = url.searchParams.get('t');
 			$.post("maker/user-made/get.php",{id:bid},function(data){
