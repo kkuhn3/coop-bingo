@@ -6,6 +6,7 @@ const plains = "#b05e02";
 const mistlands = "Violet";
 const ocean = "Aquamarine";
 const ashlands = "FireBrick";
+const deepnorth = "Azure";
 
 var vht = [
  // Valheim

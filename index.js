@@ -223,6 +223,10 @@ $(document).ready(
 			bid = "vhmats";
 			loadBingo(vhmats, strSeed);
 		}
+		else if(url.searchParams.get('t') === "vhmatsm") {
+			bid = "vhmatsm";
+			loadBingo(vhmatsm, strSeed);
+		}
 		else {
 			bid = url.searchParams.get('t');
 			$.post("maker/user-made/get.php",{id:bid},function(data){

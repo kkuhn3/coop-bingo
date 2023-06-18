@@ -1,0 +1,51 @@
+html {
+	background-color: #DDE9F5;
+}
+
+.box {
+	width: 47vw;
+	height: 12vw;
+	margin-left: 1vw;
+	margin-top: 1vw;
+	float: left;
+	cursor: pointer;
+	font-weight: 700;
+	font-size: 4vw;
+	text-shadow: 2px 0 0 White, 0 -2px 0 White, 0 2px 0 White, -2px 0 0 White;
+	text-align: center;
+}
+
+.desc {
+	font-size:1.6vw;
+	text-shadow: 2px 0 0 Black, 0 -2px 0 Black, 0 2px 0 Black, -2px 0 0 Black;
+	font-weight: 300;
+	color: white;
+}
+
+a {
+	text-shadow: none;
+}
+#default {
+	background-color: #111;
+}
+#maker {
+	background-color: #111;
+}
+#custom {
+	background-color: #111;
+}
+#mc {
+	background-color: DarkGreen;
+}
+#mcm {
+	background-color: DarkGreen;
+}
+#vht {
+	background-color: Dodgerblue;
+}
+#vhmats {
+	background-color: Dodgerblue;
+}
+#vhmatsm {
+	background-color: Dodgerblue;
+}
