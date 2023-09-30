@@ -45,9 +45,7 @@ function saveBoard() {
 function getBoardName() {
 	let title = document.getElementById("bingoNameInput");
 	let name = title.value;
-	name = name.replaceAll('\\', '');
-	name = name.replaceAll('.', '');
-	name = name.replaceAll('/', '');
+	name = name.replaceAll(/[^A-Za-z0-9\-]/gi, '');
 	return name;
 }
 

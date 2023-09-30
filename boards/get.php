@@ -1,6 +1,4 @@
 <?php
-$str = str_replace("\\", "", $_POST['id'], $count);
-$str = str_replace(".", "", $str, $count);
-$str = str_replace("/", "", $str, $count);
+$str = preg_replace('/[^A-Za-z0-9\-]/', '', $_POST['id']);
 echo file_get_contents(($str).".json");
 ?>
