@@ -38,6 +38,10 @@ var vhmatsm = [
  { name: "Hildir's brass chest", description: "", color: black },
  { name: "Hildir's silver chest", description: "", color: mountain },
  { name: "Hildir's bronze chest", description: "", color: plains },
+ { name: "Brenna trophy", description: "Still burning, somehow.", color: black },
+ { name: "Geirrhafa trophy", description: "He's giving you an icy stare.", color: mountain },
+ { name: "Thungr trophy", description: "Not so tough now.", color: plains },
+ { name: "Zil trophy", description: "In the choice of 'ride or die', he picked the latter.", color: plains },
 //Init
  { name: "Acorns", description: "Plant them to grow an oak tree.", color: black },
  { name: "Amber", description: "Valuable", color: black },

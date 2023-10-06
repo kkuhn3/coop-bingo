@@ -23,6 +23,7 @@ var vht = [
  { name: "Skeleton", description: "", color: black },
  { name: "Rancid Remains", description: "", color: black },
  { name: "The Elder", description: "", color: black },
+ { name: "Brenna", description: "", color: black },
  // Swamp
  { name: "Leech", description: "", color: swamp },
  { name: "Draugr", description: "", color: swamp },
@@ -39,6 +40,7 @@ var vht = [
  { name: "Ulv", description: "", color: mountain },
  { name: "Cultist", description: "", color: mountain },
  { name: "Moder", description: "", color: mountain },
+ { name: "Geirrhafa", description: "", color: mountain },
  // Plains
  { name: "Fuling", description: "", color: plains },
  { name: "Fuling Berserker", description: "", color: plains },
@@ -47,6 +49,8 @@ var vht = [
  { name: "Deathsquito", description: "", color: plains },
  { name: "Growth", description: "", color: plains },
  { name: "Yagluth", description: "", color: plains },
+ { name: "Zil", description: "", color: plains },
+ { name: "Thungr", description: "", color: plains },
  // Mistlands
  { name: "Hare", description: "", color: mistlands },
  { name: "Gjall", description: "", color: mistlands },
