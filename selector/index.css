@@ -15,6 +15,14 @@ html {
 	text-align: center;
 }
 
+.unclickable {
+	cursor: auto !important;
+}
+
+button {
+	cursor: pointer;
+}
+
 .desc {
 	font-size:1.6vw;
 	text-shadow: 2px 0 0 Black, 0 -2px 0 Black, 0 2px 0 Black, -2px 0 0 Black;
@@ -22,9 +30,6 @@ html {
 	color: white;
 }
 
-a {
-	text-shadow: none;
-}
 #default {
 	background-color: #111;
 }
