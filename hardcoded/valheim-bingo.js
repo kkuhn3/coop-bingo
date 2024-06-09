@@ -32,6 +32,7 @@ var vht = [
  { name: "Abomination", description: "", color: swamp },
  { name: "Blob", description: "", color: swamp },
  { name: "Bonemass", description: "", color: swamp },
+ { name: "Surtling", description: "", color: swamp },
  // Mountain
  { name: "Wolf", description: "", color: mountain },
  { name: "Fenring", description: "", color: mountain },
@@ -62,5 +63,13 @@ var vht = [
  // Ocean
  { name: "Serpent", description: "", color: ocean },
  // Ashlands
- { name: "Surtling", description: "", color: ashlands }
+ { name: "Asksvin", description: "", color: ashlands },
+ { name: "Bonemaw", description: "", color: ashlands },
+ { name: "Marksman", description: "", color: ashlands },
+ { name: "Warlock", description: "", color: ashlands },
+ { name: "Warrior", description: "", color: ashlands },
+ { name: "Fader", description: "", color: ashlands },
+ { name: "Fallen Valkyrie", description: "", color: ashlands },
+ { name: "Morgen", description: "", color: ashlands },
+ { name: "Volture", description: "", color: ashlands }
 ];
