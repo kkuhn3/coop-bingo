@@ -122,7 +122,7 @@ var vhmatsm = [
  // { name: "Asksvin Pelvis", description: "The pelvic bone of a four legged creature.", color: ashlands },
  // { name: "Asksvin Ribcage", description: "These ribs have already been stripped clean of any meat.", color: ashlands },
  // { name: "Asksvin Skull", description: "A thick skull, with room for a surprisingly large brain.", color: ashlands },
-	
+
 //Hildir's Request
  { name: "Shawl dress brown", description: "A brown dress accompanied by a warm shawl.", color: mountain },
  { name: "Beaded dress brown", description: "A brown dress accompanied by beads and silver.", color: plains },
@@ -303,7 +303,7 @@ var vhmatsm = [
  { name: "Fir cone", description: "Plant it to grow a fir tree.", color: black },
  { name: "Perch", description: "A tasty whitemeat fish.", color: black },
  { name: "Northern salmon", description: "This fish likes the water to be almost freezing cold.", color: deepnorth },
- { name: "Magmafish", description: "Some say this fish lays its eggs directly in molten lava!", color: ashlands },
+ //{ name: "Magmafish", description: "Some say this fish lays its eggs directly in molten lava!", color: ashlands },
  { name: "Pufferfish", description: "Tasty when cooked right, but the flavour has a bit of a sting.", color: plains },
  { name: "Pike", description: "A freshwater fish that needs a lot of seasoning.", color: black },
  { name: "Tuna", description: "Chicken of the sea...", color: ocean },
@@ -329,8 +329,6 @@ var vhmatsm = [
  { name: "Fishing rod", description: "Standard issue dvergr fishing rod.", color: black },
  { name: "Fish wraps", description: "Bread and fish, what more to wish?", color: plains },
  { name: "Flesh rippers", description: "If claws work for wolves, why not for a viking?", color: mountain },
- { name: "Flametal", description: "The pure, shimmering core of a meteorite.", color: ashlands },
- { name: "Flametal ore", description: "Warm to the touch with glowing veins of strange metal. Needs to be refined in a smelter.", color: ashlands },
  { name: "Flax", description: "Unspun fibers from a flax plant.", color: plains },
  //{ name: "Flint", description: "Can be shaped into sharp blades.", color: meadows },
  { name: "Freeze gland", description: "This mysterious organ keeps a perfect temperature.", color: mountain },
