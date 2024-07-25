@@ -83,7 +83,16 @@
  //{ name: "Very Very Frightening", description: "Strike a Villager with lightning", color: adventure }, 
  { name: "Sniper Duel", description: "Kill a Skeleton from at least 50 meters away", color: adventure },
  { name: "Bullseye", description: "Hit the bullseye of a Target block from at least 30 meters away", color: adventure }, 
- // Husbandry
+ { name: "Isn't It Scute?", description: "Get Armadillo Scutes from an Armadillo using a Brush", color: adventure }, 
+ { name: "Minecraft: Trial(s) Edition", description: "Step foot in a Trial Chamber", color: adventure }, 
+ { name: "Crafters Crafting Crafters", description: "Be near a Crafter when it crafts a Crafter", color: adventure }, 
+ { name: "Lighten Up", description: "Scrape a Copper Bulb with an Axe to make it brighter", color: adventure }, 
+ { name: "Who Needs Rockets?", description: "Use a Wind Charge to launch yourself upwards 8 blocks", color: adventure }, 
+ { name: "Under Lock and Key", description: "Use a Trial Key on a Vault", color: adventure }, 
+ { name: "Revaulting", description: "Use an Ominous Trial Key on an Ominous Vault", color: adventure }, 
+ { name: "Blowback", description: "Kill a Breeze with a deflected Breeze-shot Wind Charge", color: adventure }, 
+ { name: "Over-Overkill", description: "Deal 50 hearts of damage in a single hit using the Mace", color: adventure }, 
+  // Husbandry
  { name: "Bee Our Guest", description: "Use a Campfire to collect Honey from a Beehive using a Bottle without aggravating the bees", color: husbandry }, 
  { name: "The Parrots and the Bats", description: "Breed two animals together", color: husbandry },
  { name: "You've Got a Friend in Me", description: "Have an Allay deliver items to you", color: husbandry },
@@ -108,5 +117,8 @@
  { name: "The Cutest Predator", description: "Catch an axolotl in a bucket", color: husbandry },
  //{ name: "With Our Powers Combined!", description: "Have all Froglights in your inventory", color: husbandry },
  { name: "Planting the Past", description: "Plant any Sniffer seed", color: husbandry },
- { name: "The Healing Power of Friendship!", description: "Team up with an axolotl and win a fight", color: husbandry }
+ { name: "The Healing Power of Friendship!", description: "Team up with an axolotl and win a fight", color: husbandry },
+ { name: "Good as New", description: "Repair a damaged Wolf Armor using Armadillo Scutes", color: husbandry },
+ //{ name: "The Whole Pack", description: "Tame one of each Wolf variant", color: husbandry },
+ { name: "Shear Brilliance", description: "Remove Wolf Armor from a Wolf using Shears", color: husbandry }
 ];
