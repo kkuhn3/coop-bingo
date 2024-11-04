@@ -33,6 +33,7 @@ var vht = [
  { name: "Blob", description: "", color: swamp },
  { name: "Bonemass", description: "", color: swamp },
  { name: "Surtling", description: "", color: swamp },
+ { name: "Kvastur", description: "", color: swamp },
  // Mountain
  { name: "Wolf", description: "", color: mountain },
  { name: "Fenring", description: "", color: mountain },
