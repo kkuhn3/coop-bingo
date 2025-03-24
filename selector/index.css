@@ -1,9 +1,11 @@
 html {
+	user-select: none;
 	background-color: #DDE9F5;
+	margin-bottom: 1vw;
 }
 
 .box {
-	width: 47vw;
+	width: 46vw;
 	height: 12vw;
 	margin-left: 1vw;
 	margin-top: 1vw;
@@ -11,8 +13,19 @@ html {
 	cursor: pointer;
 	font-weight: 700;
 	font-size: 4vw;
+	font-family: serif;
 	text-shadow: 2px 0 0 White, 0 -2px 0 White, 0 2px 0 White, -2px 0 0 White;
 	text-align: center;
+	color: black;
+	text-decoration: none;
+	border-radius: 16px;
+	border-color: black;
+	border-style: solid;
+}
+.box:hover {
+	transform: scale(1.03);
+	transition: 0.2s all ease-out;
+	filter: brightness(130%);
 }
 
 .unclickable {
@@ -28,6 +41,7 @@ button {
 	text-shadow: 2px 0 0 Black, 0 -2px 0 Black, 0 2px 0 Black, -2px 0 0 Black;
 	font-weight: 300;
 	color: white;
+	font-family: sans-serif;
 }
 
 #default {
