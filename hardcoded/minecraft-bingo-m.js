@@ -26,7 +26,6 @@
  { name: "This Boat Has Legs", description: "Ride a Strider with a Warped Fungus on a Stick", color: nether },
  //{ name: "Uneasy Alliance", description: "Rescue a Ghast from the Nether, bring it safely home to the Overworld... and then kill it", color: nether },
  { name: "War Pigs", description: "Loot a chest in a Bastion Remnant", color: nether },
- { name: "Country Lode, Take Me Home", description: "Use a compass on Lodestone", color: nether },
  //{ name: "Cover Me in Debris", description: "Get a full suit of Netherite armor", color: nether },
  { name: "Spooky Scary Skeleton", description: "Obtain a Wither Skeleton's skull", color: nether },
  { name: "Into Fire", description: "Relieve a Blaze of its rod", color: nether },
@@ -49,7 +48,9 @@
  //{ name: "Sky's the Limit", description: "Find elytra", color: end }, 
  { name: "Great View From Up Here", description: "Levitate up 50 blocks from the attacks of a Shulker", color: end }, 
  // Adventure
+ { name: "Heart Transplanter", description: "Place a Creaking Heart with the correct alignment between two Pale Oak Log blocks", color: adventure }, 
  { name: "Voluntary Exile", description: "Kill a raid captain. Maybe consider staying away from villages for the time being...", color: adventure }, 
+ { name: "Country Lode, Take Me Home", description: "Use a compass on Lodestone", color: nether },
  { name: "Is It a Bird?", description: "Look at a parrot through a spyglass", color: adventure }, 
  //{ name: "Monster Hunter", description: "Kill any hostile monster", color: adventure }, 
  { name: "The Power of Books", description: "Read the power signal of a Chiseled Bookshelf using a Comparator", color: adventure }, 
@@ -93,6 +94,7 @@
  { name: "Blowback", description: "Kill a Breeze with a deflected Breeze-shot Wind Charge", color: adventure }, 
  { name: "Over-Overkill", description: "Deal 50 hearts of damage in a single hit using the Mace", color: adventure }, 
   // Husbandry
+ { name: "Stay Hydrated!", description: "Place a Dried Ghast block into water", color: husbandry }, 
  { name: "Bee Our Guest", description: "Use a Campfire to collect Honey from a Beehive using a Bottle without aggravating the bees", color: husbandry }, 
  { name: "The Parrots and the Bats", description: "Breed two animals together", color: husbandry },
  { name: "You've Got a Friend in Me", description: "Have an Allay deliver items to you", color: husbandry },
