@@ -1,20 +1,10 @@
-﻿const meadows = "#149a3a";
-const black = "#6f66a9";
-const swamp = "Olive";
-const mountain = "LightGrey";
-const plains = "#b05e02";
-const mistlands = "Violet";
-const ocean = "Aquamarine";
-const ashlands = "FireBrick";
-const deepnorth = "Azure";
-
-var vht = [
+﻿var vhtm = [
  // Valheim
  // Meadows
- { name: "Boar", description: "This boar head would make for a nice decoration in any house.", color: meadows },
- { name: "Deer", description: "A fine specimen but you'll need to kill more than deer to enter Valhalla.", color: meadows },
- { name: "Neck", description: "The beady eyes and razorsharp teeth belies the ostensibly calm nature of this small lizard.", color: meadows },
- { name: "Eikthyr", description: "This severed head oozes power. Offer it to the Sacrificial Stones.", color: meadows },
+ // { name: "Boar", description: "This boar head would make for a nice decoration in any house.", color: meadows },
+ // { name: "Deer", description: "A fine specimen but you'll need to kill more than deer to enter Valhalla.", color: meadows },
+ // { name: "Neck", description: "The beady eyes and razorsharp teeth belies the ostensibly calm nature of this small lizard.", color: meadows },
+ // { name: "Eikthyr", description: "This severed head oozes power. Offer it to the Sacrificial Stones.", color: meadows },
  // Black Forest
  { name: "Greydwarf", description: "The mossy, severed head of a Greydwarf.", color: black },
  { name: "Greydwarf Brute", description: "It took seven blows to hack this gnarled head from its body.", color: black },
@@ -56,23 +46,23 @@ var vht = [
  { name: "Thungr", description: "Not so tough now.", color: plains },
  { name: "Vile", description: "These eyes are finally vacant for good.", color: plains },
  // Mistlands
- { name: "Hare", description: "These are said to bring luck. But not for their original owner.", color: mistlands },
- { name: "Gjall", description: "Hopefully it won't float away.", color: mistlands },
- { name: "Tick", description: "It's a conversation piece...", color: mistlands },
- { name: "Seeker", description: "Less delicate as they look. The leather of the wings catches the firelight as if remembering flight.", color: mistlands },
- { name: "Seeker Soldier", description: "The head of a fallen champion.", color: mistlands },
- { name: "Dvergr", description: "It's frankly a little troubling that you would consider hanging these on your wall...", color: mistlands },
- { name: "The Queen", description: "She has seen enough. Offer it to the Sacrificial Stones.", color: mistlands },
+ // { name: "Hare", description: "These are said to bring luck. But not for their original owner.", color: mistlands },
+ // { name: "Gjall", description: "Hopefully it won't float away.", color: mistlands },
+ // { name: "Tick", description: "It's a conversation piece...", color: mistlands },
+ // { name: "Seeker", description: "Less delicate as they look. The leather of the wings catches the firelight as if remembering flight.", color: mistlands },
+ // { name: "Seeker Soldier", description: "The head of a fallen champion.", color: mistlands },
+ // { name: "Dvergr", description: "It's frankly a little troubling that you would consider hanging these on your wall...", color: mistlands },
+ // { name: "The Queen", description: "She has seen enough. Offer it to the Sacrificial Stones.", color: mistlands },
  // Ocean
  { name: "Serpent", description: "The scales have dulled but the eyes are still bright.", color: ocean },
  // Ashlands
- { name: "Asksvin", description: "Don't let yourself be fooled by the friendly smile, for it could easily bite your arm off.", color: ashlands },
- { name: "Bonemaw", description: "A skull made up of dense bone, as dangerous as it is protective.", color: ashlands },
- { name: "Marksman", description: "These legs could hold infinite power.", color: ashlands },
- { name: "Warlock", description: "A warm glow seems to almost emanate from within. Handle with care.", color: ashlands },
- { name: "Warrior", description: "Fractures line this skull, as if it has taken many hits over the years.", color: ashlands },
- { name: "Fader", description: "The green dragon, corrupted beyond redemption. Offer him to the sacrificial stones.", color: ashlands },
- { name: "Fallen Valkyrie", description: "Though she is dead, she yearns for the blood to flow.", color: ashlands },
- { name: "Morgen", description: "The waking nightmare has met its end.", color: ashlands },
- { name: "Volture", description: "It's like a vulture, but it thrives in volcanic climates.", color: ashlands }
+ // { name: "Asksvin", description: "Don't let yourself be fooled by the friendly smile, for it could easily bite your arm off.", color: ashlands },
+ // { name: "Bonemaw", description: "A skull made up of dense bone, as dangerous as it is protective.", color: ashlands },
+ // { name: "Marksman", description: "These legs could hold infinite power.", color: ashlands },
+ // { name: "Warlock", description: "A warm glow seems to almost emanate from within. Handle with care.", color: ashlands },
+ // { name: "Warrior", description: "Fractures line this skull, as if it has taken many hits over the years.", color: ashlands },
+ // { name: "Fader", description: "The green dragon, corrupted beyond redemption. Offer him to the sacrificial stones.", color: ashlands },
+ // { name: "Fallen Valkyrie", description: "Though she is dead, she yearns for the blood to flow.", color: ashlands },
+ // { name: "Morgen", description: "The waking nightmare has met its end.", color: ashlands },
+ // { name: "Volture", description: "It's like a vulture, but it thrives in volcanic climates.", color: ashlands }
 ];

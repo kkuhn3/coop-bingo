@@ -219,13 +219,9 @@ $(document).ready(
 			bid = "vht";
 			loadBingo(vht, strSeed);
 		}
-		else if(url.searchParams.get('t') === "vhmats") {
-			bid = "vhmats";
-			loadBingo(vhmats, strSeed);
-		}
-		else if(url.searchParams.get('t') === "vhmatsm") {
-			bid = "vhmatsm";
-			loadBingo(vhmatsm, strSeed);
+		else if(url.searchParams.get('t') === "vhtm") {
+			bid = "vhtm";
+			loadBingo(vhtm, strSeed);
 		}
 		else {
 			bid = url.searchParams.get('t');

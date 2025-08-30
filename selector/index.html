@@ -5,12 +5,6 @@
 		<title>Co-op Bingo Selector</title>
 	</head>
 	<body>
-		<div class="box" id="default" onclick="location.href='../';">
-			Default Board
-			<div class="desc">
-				Empty Bingo Board 
-			</div>
-		</div>
 		<div class="box" id="maker" onclick="location.href='../maker';">
 			Bingo Maker
 			<div class="desc">
@@ -47,19 +41,18 @@
 				Includes all possible trophies
 			</div>
 		</div>
-		<div class="box" id="vhmats" onclick="randBingo('vhmats');">
-			Valheim Materials
-			<div class="desc">
-				Bingo Board featuring Valhaim Materials <br>
-				Includes all possible materials as of 0.219.14
-			</div>
-		</div>
-		<div class="box" id="vhmatsm" onclick="randBingo('vhmatsm');">
+		<div class="box" id="vhtm" onclick="randBingo('vhtm');">
 			Median Valheim
 			<div class="desc">
-				Bingo Board featuring Valhaim Materials <br>
-				Removes materials from the Meadows, Mistlands, or Ashlands<br>
+				Bingo Board featuring Valhaim Trophies <br>
+				Removes trophies from the Meadows, Mistlands, or Ashlands<br>
 				Intended to be completeable in one play session
+			</div>
+		</div>
+		<div class="box" id="default" onclick="location.href='../';">
+			Default Board
+			<div class="desc">
+				Empty Bingo Board 
 			</div>
 		</div>
 	</body>
