@@ -15,6 +15,7 @@
  { name: "The Elder", description: "This severed head oozes power. Offer it to the Sacrificial Stones.", color: black },
  { name: "Brenna", description: "Still burning, somehow.", color: black },
  { name: "Bear", description: "That stare is still frightening...", color: black },
+ { name: "Ghost", description: "Does it still whisper about unfinished business?", color: black },
  // Swamp
  { name: "Leech", description: "Although slimy, the skin is beautifully patterned in red and black.", color: swamp },
  { name: "Draugr", description: "Bind up the mouth if it starts to whisper in the night...", color: swamp },
