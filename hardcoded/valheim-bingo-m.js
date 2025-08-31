@@ -1,10 +1,10 @@
 ﻿var vhtm = [
  // Valheim
  // Meadows
- // { name: "Boar", description: "This boar head would make for a nice decoration in any house.", color: meadows },
- // { name: "Deer", description: "A fine specimen but you'll need to kill more than deer to enter Valhalla.", color: meadows },
- // { name: "Neck", description: "The beady eyes and razorsharp teeth belies the ostensibly calm nature of this small lizard.", color: meadows },
- // { name: "Eikthyr", description: "This severed head oozes power. Offer it to the Sacrificial Stones.", color: meadows },
+ { name: "Boar", description: "This boar head would make for a nice decoration in any house.", color: meadows },
+ { name: "Deer", description: "A fine specimen but you'll need to kill more than deer to enter Valhalla.", color: meadows },
+ { name: "Neck", description: "The beady eyes and razorsharp teeth belies the ostensibly calm nature of this small lizard.", color: meadows },
+ { name: "Eikthyr", description: "This severed head oozes power. Offer it to the Sacrificial Stones.", color: meadows },
  // Black Forest
  { name: "Greydwarf", description: "The mossy, severed head of a Greydwarf.", color: black },
  { name: "Greydwarf Brute", description: "It took seven blows to hack this gnarled head from its body.", color: black },
@@ -13,7 +13,7 @@
  { name: "Skeleton", description: "The expressionless grin of this skull reminds you of the inevitability of death.", color: black },
  { name: "Rancid Remains", description: "A rank and rotten skull. You're not sure why you kept it...", color: black },
  { name: "The Elder", description: "This severed head oozes power. Offer it to the Sacrificial Stones.", color: black },
- { name: "Brenna", description: "Still burning, somehow.", color: black },
+ // { name: "Brenna", description: "Still burning, somehow.", color: black },
  { name: "Bear", description: "That stare is still frightening...", color: black },
  { name: "Ghost", description: "Does it still whisper about unfinished business?", color: black },
  // Swamp
@@ -34,7 +34,7 @@
  { name: "Ulv", description: "A rugged tail from a not so good boy", color: mountain },
  { name: "Cultist", description: "The fire in its eyes has still not burned out.", color: mountain },
  { name: "Moder", description: "The head of a dragon, majestic even in the rigor of death. Offer it to the Sacrificial Stones.", color: mountain },
- { name: "Geirrhafa", description: "He's giving you an icy stare.", color: mountain },
+ // { name: "Geirrhafa", description: "He's giving you an icy stare.", color: mountain },
  // Plains
  { name: "Fuling", description: "Loose folds of greenish skin gathered in around a pair of dark and hateful eyes.", color: plains },
  { name: "Fuling Berserker", description: "The huge grizzled head is as heavy as a boulder.", color: plains },
@@ -43,8 +43,8 @@
  { name: "Deathsquito", description: "You don't like touching this thing even when it's dead.", color: plains },
  { name: "Growth", description: "A black and sticky mess.", color: plains },
  { name: "Yagluth", description: "The crownless head of a dead king. Offer it to the Sacrificial Stones.", color: plains },
- { name: "Zil", description: "In the choice of 'ride or die', he picked the latter.", color: plains },
- { name: "Thungr", description: "Not so tough now.", color: plains },
+ // { name: "Zil", description: "In the choice of 'ride or die', he picked the latter.", color: plains },
+ // { name: "Thungr", description: "Not so tough now.", color: plains },
  { name: "Vile", description: "These eyes are finally vacant for good.", color: plains },
  // Mistlands
  // { name: "Hare", description: "These are said to bring luck. But not for their original owner.", color: mistlands },
