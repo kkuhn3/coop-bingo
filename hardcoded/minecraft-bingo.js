@@ -70,6 +70,7 @@
  { name: "Take Aim", description: "Shoot something with an arrow", color: adventure },
  { name: "Monsters Hunted", description: "Kill one of every hostile monster", color: adventure }, 
  { name: "Postmortal", description: "Use a Totem of Undying to cheat death", color: adventure }, 
+ { name: "Mob Kabob", description: "Hit five mobs in the same Charge attack using the Spear.", color: adventure }, 
  { name: "Hired Help", description: "Summon an Iron Golem to help defend a village", color: adventure },
  { name: "Star Trader", description: "Trade with a villager at the build height limit", color: adventure },
  { name: "Smithing with Style", description: "Apply these smithing templates at least once: Spire, Snout, Rib, Ward, Silence, Vex, Tide, Wayfinder", color: adventure },
