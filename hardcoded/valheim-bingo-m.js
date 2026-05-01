@@ -1,4 +1,4 @@
-﻿var vhtm = [
+﻿const vhtm = [
  // Valheim
  // Meadows
  { name: "Boar", description: "This boar head would make for a nice decoration in any house.", color: meadows },

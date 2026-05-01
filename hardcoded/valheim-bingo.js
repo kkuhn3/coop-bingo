@@ -8,7 +8,7 @@ const ocean = "Aquamarine";
 const ashlands = "FireBrick";
 const deepnorth = "Azure";
 
-var vht = [
+const vht = [
  // Valheim
  // Meadows
  { name: "Boar", description: "This boar head would make for a nice decoration in any house.", color: meadows },

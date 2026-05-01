@@ -1,4 +1,4 @@
-﻿var mcm = [
+﻿const mcm = [
  // Minecraft
  //{ name: "Stone Age", description: "Mine stone with your new pickaxe", color: minecraft},
  //{ name: "Getting an Upgrade", description: "Construct a better pickaxe", color: minecraft },

@@ -1,4 +1,10 @@
-﻿var mc = [
+﻿const minecraft = "#149a3a";
+const nether = "#ab0809";
+const end = "#bfb00c";
+const adventure = "#6f66a9";
+const husbandry = "#b05e02";
+
+const mc = [
  // Minecraft
  { name: "Stone Age", description: "Mine stone with your new pickaxe", color: minecraft},
  { name: "Getting an Upgrade", description: "Construct a better pickaxe", color: minecraft },

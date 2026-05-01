@@ -8,12 +8,6 @@ let bid = null;
 const SELECTED = "selected";
 const INTENDED = "intended";
 
-let minecraft = "#149a3a";
-let nether = "#ab0809";
-let end = "#bfb00c";
-let adventure = "#6f66a9";
-let husbandry = "#b05e02";
-
 let socket = null;
 
 function addHover() {
@@ -180,6 +174,13 @@ function redraw(save) {
 	}
 }
 
+const hardcoded = {
+	"mc": mc,
+	"mcm": mcm,
+	"vht": vht,
+	"vhtm": vhtm,
+	"all": all
+}
 $(document).ready(
 	function() {
 		parseUrl();
@@ -207,24 +208,11 @@ $(document).ready(
 				}
 			);
 		}
-		if(url.searchParams.get('t') === "mc") {
-			bid = "mc";
-			loadBingo(mc, strSeed);
-		}
-		else if(url.searchParams.get('t') === "mcm") {
-			bid = "mcm";
-			loadBingo(mcm, strSeed);
-		}
-		else if(url.searchParams.get('t') === "vht") {
-			bid = "vht";
-			loadBingo(vht, strSeed);
-		}
-		else if(url.searchParams.get('t') === "vhtm") {
-			bid = "vhtm";
-			loadBingo(vhtm, strSeed);
+		bid = url.searchParams.get('t');
+		if (Object.hasOwn(hardcoded, bid)) {
+			loadBingo(hardcoded[bid], strSeed);
 		}
 		else {
-			bid = url.searchParams.get('t');
 			$.post("maker/user-made/get.php",{id:bid},function(data){
 				try{
 					const d = JSON.parse(data);
