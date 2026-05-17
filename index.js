@@ -42,61 +42,46 @@ function onClick(type) {
 
 function addColorToHovers(color, type) {
 	let hovers = document.getElementsByClassName("hover");
-	let coloredCount = 0;
 	for (let item of hovers) {
-		const itemId = '#'.concat(item.id);
-		if (hasColor(itemId, color, type)) {
-			coloredCount = coloredCount + 1;
-		}
+		let itemId = '#'.concat(item.id);
+		addColorToItemId(itemId, color, type);
+		socket.send('{"bId":"'+bid+'","itemId":"'+itemId+'","className":"'+type+'","color":"'+color+'"}');
 	}
-	for (let item of hovers) {
-		const itemId = '#'.concat(item.id);
-		if (coloredCount < 3) {
-			addClassToItem(itemId, type, color);
-		}
-		else {
-			removeClassFromItem(itemId, type, color);
-		}
-	}	
 	redraw(true);
 	start = Date.now();
 	socket.send('ping');
 }
 
-function hasColor(itemId, color, type) {
-	let ind = parseInt(itemId.substring(5));
-	if (type === SELECTED) {
-		return loColors[ind].indexOf(color) > -1;
-	}
-	return loIntends[ind].indexOf(color) > -1;
-}
-
-function addClassToItem(itemId, type, color) {
-	let ind = parseInt(itemId.substring(5));
-	if (!$(itemId).hasClass(type)) {
-		if (type === SELECTED) {
+function addColorToItemId(itemId, color, type) {
+	let ind = parseInt(itemId.substring(5))
+	if(type === SELECTED) {
+		const hasElem = loColors[ind].indexOf(color);
+		if (hasElem > -1) {
+			loColors[ind].splice(hasElem, 1);
+		}
+		else {
 			loColors[ind].push(color);
+		}
+	}
+	else if(type === INTENDED) {
+		const hasElem = loIntends[ind].indexOf(color);
+		if(hasElem > -1) {
+			loIntends[ind].splice(hasElem, 1);
 		}
 		else {
 			loIntends[ind].push(color);
 		}
-		$(itemId).addClass(type);
-		socket.send('{"bId":"'+bid+'","itemId":"'+itemId+'","className":"'+type+'","color":"'+color+'"}');
 	}
 }
-function removeClassFromItem(itemId, type, color) {
-	let ind = parseInt(itemId.substring(5));
-	if ($(itemId).hasClass(type)) {
-		if (type === SELECTED) {
-			const hasElem = loColors[ind].indexOf(color);
-			loColors[ind].splice(hasElem, 1);
-		}
-		else {
-			const hasElem = loIntends[ind].indexOf(color);
-			loIntends[ind].splice(hasElem, 1);
-		}
-		$(itemId).removeClass(type);
-		socket.send('{"bId":"'+bid+'","itemId":"'+itemId+'","className":"'+type+'","color":"'+color+'"}');
+
+function addClassToItem(itemId, className) {
+	if(!$(itemId).hasClass(className)) {
+		$(itemId).addClass(className);
+	}
+}
+function removeClassFromItem(itemId, className) {
+	if($(itemId).hasClass(className)) {
+		$(itemId).removeClass(className);
 	}
 }
 
