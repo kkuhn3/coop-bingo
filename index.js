@@ -1,6 +1,6 @@
 let url = null;
 let start = null;
-let myColor = "DarkGreen";
+let myColor = "#006400";
 let loColors = [];
 let loIntends = [];
 let loPings = [];
@@ -41,11 +41,21 @@ function onClick(type) {
 }
 
 function addColorToHovers(color, type) {
-	let hovers = document.getElementsByClassName("hover");
+	const hovers = document.getElementsByClassName("hover");
+	let coloredCount = 0;
 	for (let item of hovers) {
-		let itemId = '#'.concat(item.id);
-		addColorToItemId(itemId, color, type);
-		socket.send('{"bId":"'+bid+'","itemId":"'+itemId+'","className":"'+type+'","color":"'+color+'"}');
+		const itemId = '#'.concat(item.id);
+		if (hasColor(itemId, color, type)) {
+			coloredCount = coloredCount + 1;
+		}
+	}
+	for (let item of hovers) {
+		const itemId = '#'.concat(item.id);
+		if ((coloredCount < hovers.length / 2.0 && !hasColor(itemId, color, type))
+		 || (coloredCount > hovers.length / 2.0 &&  hasColor(itemId, color, type))) {
+			addColorToItemId(itemId, color, type);
+			socket.send('{"bId":"'+bid+'","itemId":"'+itemId+'","className":"'+type+'","color":"'+color+'"}');
+		}
 	}
 	redraw(true);
 	start = Date.now();
@@ -72,6 +82,14 @@ function addColorToItemId(itemId, color, type) {
 			loIntends[ind].push(color);
 		}
 	}
+}
+
+function hasColor(itemId, color, type) {
+	const ind = parseInt(itemId.substring(5))
+	if (type === SELECTED) {
+		return loColors[ind].indexOf(color) > -1;
+	}
+	return loIntends[ind].indexOf(color) > -1;
 }
 
 function addClassToItem(itemId, className) {
@@ -261,6 +279,10 @@ $(document).ready(
 				}
 			}
 		});
+
+		myColor = '#' + (Math.random() * 0xfffff * 1000000).toString(16).slice(0, 6);
+		selColor.value = myColor;
+		updateColor(myColor);
 	}
 );
 
