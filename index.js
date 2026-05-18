@@ -209,7 +209,6 @@ $(document).ready(
 		let strSeed = url.searchParams.get('s');
 		if(strSeed && strSeed.includes('r')) {
 			strSeed = strSeed.replace('r', '');
-			$('#pingDiv').remove();
 			$('#selColorLabel').remove();
 			$('#selColor').remove();
 		}
@@ -261,7 +260,6 @@ $(document).ready(
 			if(event.data === "pong") {
 				let end = Date.now();
 				let delta = end - start;
-				pingDiv.innerHTML = "Ping: ".concat(delta);
 				loPings.push(delta);
 				localStorage.setItem("kpow2Pings", JSON.stringify(loPings));
 			}
