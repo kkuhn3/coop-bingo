@@ -1,4 +1,4 @@
-﻿const allColor = "#A2E8CE";
+const allColor = "#A2E8CE";
 const all = [
 	{ name: "Defeat a Boss", description: "You are Nothing", color: allColor },
 	{ name: "Obtain cross-over Content", description: "Taiyoh!", color: allColor },
@@ -29,7 +29,7 @@ const all = [
 	{ name: "Defeat a Boss Without Being Hit", description: "Perfection", color: allColor },
 	{ name: "Use an Item Until it Reaches 0 Durability", description: "Doesn't need to break", color: allColor },
 	{ name: "Fish up not a Fish", description: "", color: allColor },
-	{ name: "See your Character's Reflection", description: "Mirrors Mirrors", color: allColor },
+	{ name: "See your Character's Reflection", description: "Mirror Mirror", color: allColor },
 	{ name: "Cut Down a Tree", description: "Timber!!", color: allColor },
 	{ name: "Crash the Game", description: "ƒNƒ‰ƒVƒbƒNƒRƒ\"ƒgƒ [ƒ‰,ª·K—v,Å,· B", color: allColor },
 	{ name: "Complete the Tutorial", description: "", color: allColor },
@@ -37,7 +37,7 @@ const all = [
 	{ name: "Play an Instrument", description: "Spicy Licks", color: allColor },
 	{ name: "Open a Locked Door", description: "Small Key Anyone?", color: allColor },
 	{ name: "Increase your Max Health", description: "Heart Breaker", color: allColor },
-	{ name: "Buy out a Shop", description: "Umbrella", color: allColor },
+	{ name: "Buy out a Shop", description: "Parasol", color: allColor },
 	{ name: "Catch a Fish", description: "Fishy Business", color: allColor },
 	{ name: "Jump out of a Moving Vehicle", description: "Tuck n Roll", color: allColor },
 	{ name: "Find a number higher than 9000", description: "Don't just write it in Chat!", color: allColor },
@@ -60,9 +60,12 @@ const all = [
 	{ name: "Find the number 67", description: "six-seven", color: allColor },
 	{ name: "Reach Max Level", description: "Not having levels doesn't count", color: allColor },
 	{ name: "Get a NEW Steam Achievement", description: "Without reseting your achievements", color: allColor },
-	{ name: "Play coop with Someone not playing Bingo", description: "", color: allColor },
+	{ name: "Play coop with Someone not participating in Bingo", description: "", color: allColor },
 	{ name: "Win a Gold Trophy", description: "", color: allColor },
 	{ name: "Bust a Ghost", description: "GhostBusters", color: allColor },
 	{ name: "Complete the Dailies", description: "", color: allColor },
-	{ name: "Go outside IRL", description: "Touch Grass", color: allColor }
+	{ name: "Go outside IRL", description: "Touch Grass", color: allColor },
+	{ name: "Fall for 15 seconds", description: "How long?", color: allColor },
+	{ name: "Transform", description: "Next time on... ", color: allColor },
+	{ name: "Achieve a 30 hit combo!", description: "one two three... etc", color: allColor }
 ];
